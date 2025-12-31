@@ -39,7 +39,8 @@ This command initializes the market_research_crew Crew, assembling the agents an
 
 This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
 
-Understanding Your Crew
+# Understanding Your Crew
+
 The MarketResearchCrew is a sophisticated multi-agent system where five specialized AI entities collaborate to transform a product idea into a validated business strategy:
 
 Market Research Specialist: Performs the initial deep dive into market sizing (TAM/SAM/SOM), growth drivers, and regulatory landscapes.
@@ -53,6 +54,19 @@ Product Strategy Advisor: Synthesizes research into a concrete product roadmap, 
 Business Analyst: Acts as the final synthesizer, providing a professional investment-grade report with pricing models, risk matrices, and a final Go/No-Go recommendation.
 
 These agents operate sequentially as defined in crew.py, passing context from one task to the next to ensure the final report is grounded in cohesive, data-driven insights. Your agent configurations are managed in config/agents.yaml, while the specific research objectives and expected outputs are detailed in config/tasks.yaml.
+
+# Additional Tools Used
+
+The MarketResearchCrew leverages a suite of specialized tools to ensure agents have access to real-time, high-fidelity data from the web:
+
+SerperDevTool: A powerful Google Search API used by the agents to conduct broad market research, track industry trends, and identify competitors across the live web.
+
+ScrapeWebsiteTool: Enables agents to extract structured information directly from specific URLs, such as competitor landing pages or industry news articles.
+
+SeleniumScrapingTool: Provides advanced browser-based scraping capabilities, allowing agents to navigate and extract data from complex, JavaScript-heavy websites that standard scrapers might miss.
+
+Configuration
+These tools are initialized within crew.py and bundled into a toolkit that is assigned to the specialized agents. This setup ensures that your Market Research Specialist and Competitive Intelligence Analyst have the "eyes" needed to find the most current data-backed insights.
 
 ## Support
 
