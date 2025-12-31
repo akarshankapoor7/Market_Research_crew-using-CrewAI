@@ -1,6 +1,6 @@
 # MarketResearchCrew Crew
 
-Welcome to the MarketResearchCrew Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+This project implements a sophisticated multi-agent AI system using CrewAI to automate end-to-end market research and business analysis. It orchestrates five specialized agents—ranging from Market Research and Competitive Intelligence to Product Strategy—that collaborate sequentially to transform raw product ideas into comprehensive investment-ready memos. Leveraging advanced tools for web searching and scraping, the crew delivers data-backed insights on market sizing, customer personas, and technical feasibility. The final output is a professional Markdown report detailing pricing strategies, revenue models, and a definitive go/no-go recommendation for AI product concepts.
 
 ## Installation
 
@@ -20,7 +20,7 @@ crewai install
 ```
 ### Customizing
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
+**Add your `OPENAI_API_KEY/GROQ_API_KEY` into the `.env` file**
 
 - Modify `src/market_research_crew/config/agents.yaml` to define your agents
 - Modify `src/market_research_crew/config/tasks.yaml` to define your tasks
@@ -39,9 +39,20 @@ This command initializes the market_research_crew Crew, assembling the agents an
 
 This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
 
-## Understanding Your Crew
+Understanding Your Crew
+The MarketResearchCrew is a sophisticated multi-agent system where five specialized AI entities collaborate to transform a product idea into a validated business strategy:
 
-The market_research_crew Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+Market Research Specialist: Performs the initial deep dive into market sizing (TAM/SAM/SOM), growth drivers, and regulatory landscapes.
+
+Competitive Intelligence Analyst: Conducts a 360-degree audit of the competition, mapping out their strengths, pricing models, and market positioning to find strategic gaps.
+
+Customer Insights Researcher: Builds detailed user personas and journey maps by analyzing real-world pain points and customer behaviors.
+
+Product Strategy Advisor: Synthesizes research into a concrete product roadmap, prioritizing MVP features and assessing technical feasibility.
+
+Business Analyst: Acts as the final synthesizer, providing a professional investment-grade report with pricing models, risk matrices, and a final Go/No-Go recommendation.
+
+These agents operate sequentially as defined in crew.py, passing context from one task to the next to ensure the final report is grounded in cohesive, data-driven insights. Your agent configurations are managed in config/agents.yaml, while the specific research objectives and expected outputs are detailed in config/tasks.yaml.
 
 ## Support
 
